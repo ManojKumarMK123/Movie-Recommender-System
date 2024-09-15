@@ -1,3 +1,4 @@
 streamlit
 pandas
 hydralit_components
+numpy
