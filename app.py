@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import numpy
 import pandas as pd
 import hydralit_components as hc
 st.set_page_config(page_title="Cinema Match",page_icon = 'movie.png',layout='wide')
