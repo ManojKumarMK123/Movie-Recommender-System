@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy
 import pandas as pd
-import hydralit_components as hc
+# import hydralit_components as hc
 st.set_page_config(page_title="Cinema Match",page_icon = 'movie.png',layout='wide')
 # st.beta_set_page_config(page_title='your_title', page_icon = favicon, layout = 'wide', initial_sidebar_state = 'auto')
 def recommend(movie):
@@ -19,45 +19,45 @@ def recommend(movie):
 movies_dict = pickle.load(open('movie_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl','rb'))
-hide_streamlit_style = """
-                <style>
-                div[data-testid="stToolbar"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stDecoration"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stStatusWidget"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                #MainMenu {
-                visibility: hidden;
-                height: 0%;
-                }
-                header {
-                visibility: hidden;
-                height: 0%;
-                }
-                footer {
-                visibility: hidden;
-                height: 0%;
-                }
-                </style>
-                """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# hide_streamlit_style = """
+#                 <style>
+#                 div[data-testid="stToolbar"] {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 position: fixed;
+#                 }
+#                 div[data-testid="stDecoration"] {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 position: fixed;
+#                 }
+#                 div[data-testid="stStatusWidget"] {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 position: fixed;
+#                 }
+#                 #MainMenu {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 }
+#                 header {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 }
+#                 footer {
+#                 visibility: hidden;
+#                 height: 0%;
+#                 }
+#                 </style>
+#                 """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # specify the primary menu definition
-menu_data = [
-        {'icon': "far fa-copy", 'label':"About Us"}
-]
-over_theme = {'txc_inactive': '#FFFFFF','menu_background':'#2d87f4'}
-menu_id = hc.nav_bar(menu_definition=menu_data,home_name='Home',override_theme=over_theme)
+# menu_data = [
+#         {'icon': "far fa-copy", 'label':"About Us"}
+# ]
+# over_theme = {'txc_inactive': '#FFFFFF','menu_background':'#2d87f4'}
+# menu_id = hc.nav_bar(menu_definition=menu_data,home_name='Home',override_theme=over_theme)
 
 st.title('Cinema Match: A movie recommendation system')
 selected_movie_name = st.selectbox(
